@@ -1,0 +1,53 @@
+.card{
+  position: relative;
+  width: 30%;
+  padding: 15px 18px;
+  background: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.card > img{
+  margin-top: -60px;
+  width: 55px;
+  padding: 15px;
+  background-color: var(--Dark-Violet);
+  border-radius: 100%;
+}
+
+.card > h3{
+  font-size: 1rem;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
+.card > p{
+  margin-bottom: 0;
+  font-size: .8rem;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+/* Aplicando un desplazamiento vertical en cada tarjeta para crear el efecto de escalera */
+.card:nth-last-child(1) {
+  transform: translateY(60px);
+}
+
+.card:nth-child(2) {
+  transform: translateY(0px);
+}
+
+.card:nth-child(3) {
+  transform: translateY(30px);
+}
+
+@media screen and (min-width: 800px) and (max-width: 1023px){
+  .card > h3{
+    font-size: .9rem;
+  }
+
+  .card > p{
+    font-size: .7rem;    
+  }
+}

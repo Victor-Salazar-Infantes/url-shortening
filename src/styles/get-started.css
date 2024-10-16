@@ -1,0 +1,58 @@
+@import "variables.css";
+
+.get-started-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 230px;
+  background-image: url(../assets/images/bg-boost-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--Dark-Violet);
+  border: 1px solid var(--Dark-Violet);
+}
+
+.container__title{
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #FFF;
+}
+
+.container__button{
+  color: #FFF;
+  background-color: var(--Cyan);
+  border-style: none;
+  border-radius: 30px;
+  border-color: transparent;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.container__button:hover{
+  opacity: .8;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1023px){
+  .container__title{
+    font-size: 1.8rem;
+  }
+
+  .container__button{
+    font-size: .9rem;
+  }
+}
+
+@media screen and (max-width: 799px){
+  .container__title{
+    font-size: 1.5rem;
+  }
+
+  .container__button{
+    font-size: .8rem;
+  }
+}

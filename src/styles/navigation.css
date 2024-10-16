@@ -1,0 +1,134 @@
+@import "./variables.css";
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 45px;
+  margin: 0px 7.5%;
+}
+
+nav img{
+  height: 35px;
+}
+
+#icon-menu{
+  display: none;
+}
+
+.nav-left{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-left ul li a{
+  font-size: .9rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--Grayish-Violet);
+}
+
+.nav-left > ul > li > a:hover{
+  color: var(--Very-Dark-Violet);
+}
+
+.nav-right{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.login{
+  font-size: .9rem;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--Grayish-Violet);
+}
+
+.login:hover{
+  opacity: .5;
+}
+
+.sign-up{
+  font-size: .9rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: var(--Cyan);
+  border-color: transparent;
+  color: #FFF;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sign-up:hover{
+  opacity: .5;
+}
+
+@media screen and (max-width: 800px){
+  nav{
+    display: block;
+    /* justify-content: space-between; */
+    /* gap: 0; */
+  }
+
+  .nav-left{
+    margin-top: 2rem;
+    /* position: absolute; */
+    width: 85vw;
+    padding: 25px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--Dark-Violet);
+    border-radius: 13px;
+    background-color: var(--Dark-Violet);
+  }
+
+  .nav-left ul{
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid white;
+    width: 75%;
+    padding-bottom: 20px;
+  }
+
+  .nav-left ul li a{
+    font-size: .8rem;
+    color: #FFF;
+  }
+
+  .nav-right{
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .login{
+    font-size: .8rem;
+    color: #FFF;
+  }
+
+  .sign-up{
+    width: 50vw;
+    max-width: 375px;
+    font-size: .8rem;
+  }
+
+  #icon-menu{
+  display: block;
+  height: 28px;
+  cursor: pointer;
+  float: right;
+  }
+}

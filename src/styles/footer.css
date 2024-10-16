@@ -1,0 +1,84 @@
+.container__footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  padding: 40px 0 50px;
+  background-color: var(--Very-Dark-Blue);
+  align-items: flex-start;
+}
+
+.container__links{
+  display: flex;
+  gap: 80px;
+  flex-direction: row;
+}
+
+.list > ul :first-child{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #FFF;
+}
+
+.list ul li:nth-child(2),
+.list ul li:nth-child(3),
+.list ul li:nth-child(4),
+.list ul li:nth-child(5) {
+  font-size: .7rem;
+  margin-bottom: .8rem;
+  color: var(--Grayish-Violet);
+  cursor: pointer;
+}
+
+.list ul li:nth-child(2):hover,
+.list ul li:nth-child(3):hover,
+.list ul li:nth-child(4):hover,
+.list ul li:nth-child(5):hover {
+  color: var(--Cyan);
+}
+
+.list > ul, 
+.list-icons > ul{
+  list-style: none;
+}
+
+.list-icons > ul{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.list-icons > ul > li{
+  width: 35px;
+  height: 24px;
+}
+
+.list-icons li:hover path{
+  cursor: pointer;
+  fill: var(--Cyan);
+}
+
+@media screen and (min-width: 800px) and (max-width: 1023px){
+  .list-icons > ul > li{
+    width: 28px;
+    height: 20px;
+  }
+
+  .container__links{
+    gap: 55px;
+  }
+}
+
+@media screen and (max-width: 799px){
+  .container__footer{
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .container__links{
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
