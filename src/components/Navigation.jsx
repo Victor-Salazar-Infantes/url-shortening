@@ -1,11 +1,32 @@
-import Logo from "../../public/images/logo.svg"
+/* import Logo from "../assets/images/logo.svg";
+import HamburgerMenu from "../assets/images/more.png" */
+import { useState, useEffect } from 'react';
 import "../styles/navigation.css"
 
+// Importar todas las imágenes de forma dinámica usando import.meta.glob
+const images = import.meta.glob('../assets/images/*.{svg,png}');
+
 function Header() {
+
+   const [logo, setLogo] = useState('');
+  const [hamburgerMenu, setHamburgerMenu] = useState('');
+
+  useEffect(() => {
+    // Cargar las imágenes de manera asíncrona
+    async function loadImages() {
+      const logoModule = await images['../assets/images/logo.svg']();
+      const hamburgerMenuModule = await images['../assets/images/more.png']();
+      setLogo(logoModule.default);
+      setHamburgerMenu(hamburgerMenuModule.default);
+    }
+
+    loadImages();
+  }, []);
+
   return (
     <nav>
-      <a href=""><img src={Logo} alt="logo"/></a>
-      <img src="./images/more.png" id="icon-menu" alt="hamburger-menu"/>
+      <a href=""><img src={logo} alt="logo"/></a>
+      <img src={hamburgerMenu} id="icon-menu" alt="hamburger-menu"/>
       <div className="nav-left">
         <ul>
           <li><a href="#">Features</a></li>

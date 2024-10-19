@@ -1,7 +1,23 @@
+import { useState, useEffect } from "react";
 import "../styles/footer.css";
-import footerLogo from "../../public/images/logo-footer.svg";
+// import footerLogo from "../assets/images/logo-footer.svg";
+
+// Importar todas las imágenes de forma dinámica usando import.meta.glob
+const images = import.meta.glob('../assets/images/*.svg');
 
 function Footer() {
+   const [footerLogo, setFooterLogo] = useState('');
+
+  useEffect(() => {
+    // Cargar la imagen de manera asíncrona
+    async function loadImage() {
+      const footerLogoModule = await images['../assets/images/logo-footer.svg']();
+      setFooterLogo(footerLogoModule.default);
+    }
+
+    loadImage();
+  }, []);
+
   return (
     <footer>
       <div className="container__footer">
